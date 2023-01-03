@@ -10,19 +10,22 @@ class Cart extends React.Component {
                     price : 999,
                     title:"watch",
                     qty : 1,
-                    img:''
+                    img:'',
+                    id:1
                 },
                 {
                     price: 999,
                     title: "Mobile Phone",
                     qty: 1,
-                    img: ''
+                    img: '',
+                    id: 2
                 },
                 {
                     price: 999,
                     title: "Ear Phone",
                     qty: 1,
-                    img: ''
+                    img: '',
+                    id: 3
                 },
             ]
         }
@@ -50,6 +53,15 @@ class Cart extends React.Component {
             products : products
         })
     }
+    
+    handleDelete = (productId) => {
+        console.log("called delete");
+        const {products} = this.state;
+        const items = products.filter((item)=> item.id !== productId)
+        this.setState ({
+            products:items
+        })
+    }
 
     render(){
         const {products} = this.state;
@@ -61,6 +73,7 @@ class Cart extends React.Component {
                         product={product}
                         onIncreaseQty = {this.handleIncreaseQty}
                         onDecreaseQty = {this.handleDecreaseQty}
+                        onDelete = {this.handleDelete}
                     />
                     console.log("jnv", product)
                 })
