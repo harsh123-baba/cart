@@ -77,6 +77,16 @@ class App extends React.Component{
     return qty;
   }
 
+  TotalPrice = () => {
+    const {products} = this.state;
+    let totalprice = 0;
+    products.map((e)=>{
+      totalprice+=e.price;
+    })
+    console.log("total price", totalprice)
+    return totalprice;
+  }
+
   render(){
     const {products}=this.state;
     return (
@@ -90,6 +100,7 @@ class App extends React.Component{
           onIncreaseQty={this.handleIncreaseQty}
           onDecreaseQty={this.handleDecreaseQty}
           onDelete={this.handleDelete}
+          totalprice={this.TotalPrice()}
         />
       </div>
     );

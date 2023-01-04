@@ -12,13 +12,15 @@ function Cart(props){
                         product={product}
                         onIncreaseQty={props.onIncreaseQty}
                         onDecreaseQty={props.onDecreaseQty}
-                        onDelete={props.onDelete}
-                        
+                        onDelete={props.onDelete}  
                     />
                     // console.log("jnv", product)
                 })
                 }
-                
+                <div className='price'>
+                    <p>{props.totalprice}</p>
+                </div>
+
             </div>
         )
     }
