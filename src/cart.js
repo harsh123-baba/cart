@@ -18,7 +18,7 @@ function Cart(props){
                 })
                 }
                 <div className='price'>
-                    <p>{props.totalprice}</p>
+                    <p>Total : {props.totalprice}</p>
                 </div>
 
             </div>

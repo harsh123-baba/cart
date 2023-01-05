@@ -12,21 +12,21 @@ class App extends React.Component{
           price: 999,
           title: "watch",
           qty: 1,
-          img: '',
+          img: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1099&q=80',
           id: 1
         },
         {
-          price: 999,
+          price: 9999,
           title: "Mobile Phone",
           qty: 1,
-          img: '',
+          img: 'https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80',
           id: 2
         },
         {
-          price: 999,
-          title: "Ear Phone",
+          price: 99999,
+          title: "Laptop",
           qty: 1,
-          img: '',
+          img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80',
           id: 3
         },
       ]
@@ -81,7 +81,7 @@ class App extends React.Component{
     const {products} = this.state;
     let totalprice = 0;
     products.map((e)=>{
-      totalprice+=e.price;
+      totalprice+=(e.price * e.qty);
     })
     console.log("total price", totalprice)
     return totalprice;
